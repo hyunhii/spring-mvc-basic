@@ -76,4 +76,14 @@ public class RequestBodyJsonController {
 
         return data;
     }
+
+    @PostMapping("request-body-json-v6")
+    public HttpEntity<HelloData> requestJsonV6(@RequestBody HelloData data) {
+
+        log.info("messageBody = {}", data);
+        log.info("username = {}, age = {}", data.getUsername(), data.getAge());
+
+        return new HttpEntity<>(data);
+
+    }
 }
